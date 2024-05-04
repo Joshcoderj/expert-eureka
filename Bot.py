@@ -9,7 +9,7 @@ def echo(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text=update.message.text)
 
 def main():
-    updater = Updater(TOKEN)
+    updater = Updater(TOKEN, None)  # Add None as the update_queue argument
     dispatcher = updater.dispatcher
 
     start_handler = CommandHandler('start', start)
@@ -23,3 +23,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+```
